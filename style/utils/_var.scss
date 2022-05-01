@@ -1,0 +1,30 @@
+:root {
+  --primary-color: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --dark-grey: hsl(234, 11%, 52%);
+  --light-grey: hsl(236, 9%, 61%);
+  --text-title: hsl(0, 0%, 98%);
+  --drop-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+
+  --text-color: #333;
+  --background-site: hsl(236, 33%, 92%);
+  --background-components: hsl(0, 0%, 98%);
+  --background-img: url('../../images/bg-desktop-light.jpg');
+}
+
+[data-theme='dark'] {
+  --text-color: #f3f6fb;
+  --background-site: hsl(235, 21%, 11%);
+  --background-components: hsl(235, 24%, 19%);
+  --background-img: url('../../images/bg-desktop-dark.jpg');
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --background-img: url('../../images/bg-mobile-light.jpg');
+  }
+
+  [data-theme='dark'] {
+    --background-img: url('../../images/bg-mobile-dark.jpg');
+  }
+}

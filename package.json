@@ -1,0 +1,19 @@
+{
+  "name": "todoappv2",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.9.5"
+  },
+  "dependencies": {
+    "@types/sortablejs": "^1.10.7",
+    "sass": "^1.51.0",
+    "sortablejs": "^1.15.0"
+  }
+}

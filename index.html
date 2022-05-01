@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/index.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body data-theme="light">
+    <header class="header">
+      <h1 class="header__title">TODO</h1>
+      <button class="header__button" type="button">
+        <img src="./images/icon-moon.svg" alt="Dark mode toggle" />
+        <img src="./images/icon-sun.svg" class="disappear" alt="Dark mode toggle" />
+      </button>
+    </header>
+    <main>
+      <section class="main__input">
+        <div class="circle"></div>
+        <form id="main-input-form">
+          <label for="main-input" class="disappear">Main input</label>
+          <input type="text" placeholder="Create a new todo..." id="main-input" maxlength="150" />
+        </form>
+      </section>
+      <section class="todos">
+        <ul id="todos-list" class="todos-list"></ul>
+        <div class="todos-list__info">
+          <div id="remaining-todos">No items left</div>
+          <div class="filter-wrapper-inside">
+            <ul class="todos-list__filter">
+              <li><a href="#" class="hover-link active-filter">All</a></li>
+              <li><a href="#" class="hover-link">Active</a></li>
+              <li><a id="completed-filter" href="#" class="hover-link">Completed</a></li>
+            </ul>
+          </div>
+          <a href="#" class="todos-list__clear hover-link">Clear Completed</a>
+        </div>
+      </section>
+      <div class="filter-wrapper-outside todos"></div>
+      <div class="drag-message">Drag and drop to reorder the list</div>
+    </main>
+    <template>
+      <li data-todo-li class="todo active-todo">
+        <div class="todo__circle"></div>
+        <p class="todo__description"></p>
+        <div class="todo__close">
+          <img class="disappear" src="./images/icon-cross.svg" alt="Delete todo" />
+        </div>
+      </li>
+    </template>
+    <script src="./dist/main.js" type="module"></script>
+  </body>
+</html>
