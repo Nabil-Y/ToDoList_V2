@@ -67,5 +67,5 @@ I need more practice with TypeScript and build tools. I'm getting used to integr
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Nabil-Y)
-- Twitter - [@yourusername](https://www.twitter.com/nabil_io)
+- Frontend Mentor - [@Nabil-Y](https://www.frontendmentor.io/profile/Nabil-Y)
+- Twitter - [@Nabil_io](https://www.twitter.com/nabil_io)
