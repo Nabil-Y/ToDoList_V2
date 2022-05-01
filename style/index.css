@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+:root {
+  --primary-color: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --dark-grey: hsl(234, 11%, 52%);
+  --light-grey: hsl(236, 9%, 61%);
+  --text-title: hsl(0, 0%, 98%);
+  --drop-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  --text-color: #333;
+  --background-site: hsl(236, 33%, 92%);
+  --background-components: hsl(0, 0%, 98%);
+  --background-img: url("img/bg-desktop-light.jpg");
+}
+
+[data-theme=dark] {
+  --text-color: #f3f6fb;
+  --background-site: hsl(235, 21%, 11%);
+  --background-components: hsl(235, 24%, 19%);
+  --background-img: url("img/bg-desktop-dark.jpg");
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --background-img: url("img/bg-mobile-light.jpg");
+  }
+
+  [data-theme=dark] {
+    --background-img: url("img/bg-mobile-dark.jpg");
+  }
+}
+.hidden {
+  visibility: hidden;
+}
+
+.disappear {
+  display: none;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  padding: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images easier to work with */
+img,
+video,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-color: var(--background-site);
+  background-size: contain;
+  padding: 1rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.circle,
+.todo__circle {
+  position: relative;
+  height: 27px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-right: 1rem;
+  background-color: var(--dark-grey);
+}
+.circle::after,
+.todo__circle::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  height: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--background-components);
+}
+.circle::before,
+.todo__circle::before {
+  content: url("img/icon-check.svg");
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 5%);
+}
+
+.todo__circle {
+  cursor: pointer;
+}
+.todo__circle:hover {
+  background: var(--check-background);
+}
+.todo__circle.checked {
+  background: var(--check-background);
+}
+.todo__circle.checked::after {
+  background: transparent;
+}
+
+.todo__description.checked {
+  color: var(--light-grey);
+  text-decoration: line-through;
+}
+
+.hover-link:hover {
+  color: var(--text-color);
+}
+
+.drag-message {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 14px;
+  color: var(--light-grey);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: min(520px, 100%);
+  margin: 3rem auto 2rem;
+}
+.header__title {
+  color: var(--text-title);
+  letter-spacing: 1.2rem;
+  font-size: 2.6rem;
+}
+.header__button {
+  padding: 0;
+}
+
+main {
+  width: min(520px, 100%);
+  margin: auto;
+}
+main .main__input {
+  display: flex;
+  padding: 1.2rem;
+  background-color: var(--background-components);
+  border-radius: 5px;
+}
+main .main__input input {
+  background-color: var(--background-components);
+  width: 90%;
+  border: none;
+  outline: none;
+}
+main .main__input input[placeholder] {
+  color: var(--text-color);
+}
+main .todos {
+  margin-top: 1.4rem;
+  background-color: var(--background-components);
+  border-radius: 5px;
+  box-shadow: var(--drop-shadow);
+  color: var(--text-color);
+}
+main .todos-list .todo {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--light-grey);
+}
+main .todos-list .todo p {
+  width: 90%;
+}
+main .todos-list .todo__close {
+  cursor: pointer;
+}
+main .todos-list .todo:hover img {
+  display: block;
+}
+main .todos-list__filter {
+  display: flex;
+  font-weight: bold;
+  margin: 0;
+}
+main .todos-list__filter li {
+  padding: 0 0.3rem;
+}
+main .todos-list__filter li .active-filter {
+  color: var(--primary-color);
+}
+main .todos-list__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--light-grey);
+  padding: 1rem;
+}
+
+.filter-wrapper-outside ul {
+  justify-content: center;
+  padding: 1rem;
+}
+.filter-wrapper-outside ul li {
+  padding: 0 1rem;
+  color: var(--light-grey);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin: 2rem auto 2rem;
+  }
+  .header__title {
+    color: var(--text-title);
+    letter-spacing: 1.2rem;
+    font-size: 2rem;
+  }
+  .header__button {
+    padding: 0;
+  }
+
+  .todo img {
+    display: block;
+  }
+}
+@media screen and (max-width: 550px) {
+  body {
+    background-size: 125%;
+  }
+
+  .todo {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
